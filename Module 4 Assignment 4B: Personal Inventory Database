@@ -23,9 +23,8 @@ foreach ($items as $item) {
 }
 
 
-/* 
-   Question -Why you chose your items.:
-   How this could scale to real world inventory systems.:
+/* Question -Why you chose your items.:
+   Question - How this could scale to real world inventory systems.:
 
    I chose these five items as I used to be a purchasing agent for a large bread making factory and these were some 
    of the items most commonly used. In my department, it was crucial that we kept inventory
