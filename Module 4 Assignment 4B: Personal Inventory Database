@@ -1,5 +1,5 @@
 <?php
-echo "Step 1: Script started<br>";
+
 
 try {
   $db = new PDO("mysql:host=localhost;dbname=inventory_db", "root", "");
@@ -8,12 +8,18 @@ try {
   $stmt = $db->query("SELECT * FROM items");
   $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  foreach ($items as $item) {
-    echo "<p>{$item['item_name']} ({$item['quantity']} units)</p>";
-  }
+foreach ($items as $item) {
+    echo "<p>FLOUR: {$item['FLOUR']} units</p>";
+    echo "<p>SUGAR: {$item['SUGAR']} units</p>";
+    echo "<p>YEAST: {$item['YEAST']} units</p>";
+    echo "<p>STARCH: {$item['STARCH']} units</p>";
+    echo "<p>CHOCOLATE: {$item['CHOCOLATE']} units</p>";
 
-} catch (PDOException $e) {
+  }
+  echo "<hr>";
+}
+
+ catch (PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
 ?>
-  
