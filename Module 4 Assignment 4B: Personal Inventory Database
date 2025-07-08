@@ -1,6 +1,5 @@
 <?php
 
-
 try {
   $db = new PDO("mysql:host=localhost;dbname=inventory_db", "root", "");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,4 +21,30 @@ foreach ($items as $item) {
  catch (PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
+
+
+/* 
+   Question -Why you chose your items.:
+   How this could scale to real world inventory systems.:
+
+   I chose these five items as I used to be a purchasing agent for a large bread making factory and these were some 
+   of the items most commonly used. In my department, it was crucial that we kept inventory
+   for these items as they were needed for scheduled production dates. Unfortunately,
+   the department I worked for was small (compared to the main production), so these tools weren't properly 
+   utilized, despite me advocating for them. Electronic Inventory databases are critical for
+   any manufacturing company in the 21st century, especially if the inventory count is large.
+   It will be nearly impossible for one person to keep a manual count of these items, which
+   leads to production delays and other issues. Theortically, a smoother manual inventory process can be achieved if
+   more labor is hired for the specific task, but the cost would be more than any ERP (inventory management) system,
+   and with none of the real time benefits.
+   
+   Question: How using PDO protects from SQL injection.
+
+   In itself, PDO projects don't necessarily protect against SQL injection.
+   The programmer will have to use Prepared Statements and Parameter Bindings to guard 
+   against this. As the reading says: "The PDO will send the query structure
+   to MySQL first, and then the parameter values separately, which will allow
+   MSQL to know that the parameter values are Data and not Commands, so a 
+   malicious user will not be able to try to inject data to run as code."
+*/
 ?>
